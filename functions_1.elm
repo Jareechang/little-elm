@@ -5,20 +5,11 @@ shift str =
   (slice 0 1 str)
 
 (~=) str1 str2 =
-  let 
-      firstChar =
-        shift str1
-
-      secondChar =
-        shift str2
-  in
-     firstChar == secondChar
-
-result =
-  "wow" ~= "wellow"
+  String.left 1 str1 == String.left 1 str2
 
 main =
-  (toString result)
+  (~=) "hello" "hi"
+  |> toString
   |> Html.text
 
 
